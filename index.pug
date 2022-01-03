@@ -1,0 +1,80 @@
+doctype html 
+
+html 
+    head
+        link(rel="stylesheet", href="../css/main.css") 
+        link(rel="stylesheet", href="https://2.cdn.wisboo.com/fonts/icons-wisboo/style.css")
+    body
+        header    
+        main 
+            - const exportIcono = ["icon-file_download---material", "eadd"]
+            - const moneyIcono = ["icon-attach_money---material", "ea2b"]
+            - const buscarIcono = ["icon-Buscar", "e939"]
+            - const dateIcono = ["icon-Date", "e90c"]
+            section.container
+                    .container-head 
+                            h1.container-head__title ventas de la academia 
+                            .container-head__buttons
+                                button.container-head__buttons--exportar
+                                    i(class = exportIcono) 
+                                    span EXPORTARrrr  
+                                button.container-head__buttons--registrar REGISTRAR UNA VENTA 
+                    article.boxes 
+                        .boxes__box1
+                            h2 Cant Ventas
+                            p.boxes__box1--value 322
+                            p.boxes__box1--period Últimos 60 días  
+                        .boxes__box2
+                            h2 Recaudo (MXN)
+                            .boxes__box2--value
+                                i(class = moneyIcono)(style ="margin-right: 17.2px; color: #000000")
+                                span 77322 MXN 
+                            p.boxes__box2--period 04/10/2020 - 04/12/2020 
+                        .boxes__box3 
+                            h2 Recaudo (USD)
+                            .boxes__box3--value
+                                i(class = moneyIcono)(style ="margin-right: 17.2px; color: #000000")
+                                span 10420 USD
+                            p.boxes__box3--period Todos los tiempos
+                        .boxes__box4 
+                            h2 Recaudo (ARS)
+                            .boxes__box4--value
+                                i(class = moneyIcono)(style ="margin-right: 17.2px; color: #000000")
+                                span 257000 ARS
+                            p.boxes__box4--period 04/10/2020 - 04/12/2020
+                    article.grid
+                        .grid__searched
+                            .grid__searched--text 
+                                input.grid__searched--text--lupa(type="text", placeholder = "Buscar por #orden o comprador")
+                                i(class = buscarIcono) 
+                            .grid__searched--curso
+                                select
+                                    option(value="curso") Curso     
+                            .grid__searched--estado
+                                select
+                                    option(value="estado") Estado
+                            .grid__searched--moneda
+                                select
+                                    option(value="moneda") Medio de pago 
+                            .grid__searched--date 
+                                input(type="date" value="04/10/2020")
+                                .grid__searched--date--icon
+                                    i(class = dateIcono)
+                        .grid__categories 
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                        .grid__data 
+                            div 
+                            div 
+                            div 
+                            div 
+                            div 
+                            div 
+                            div 
+                            div 
+                            div      
+    footer 

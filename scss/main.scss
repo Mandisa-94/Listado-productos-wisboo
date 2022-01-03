@@ -1,0 +1,269 @@
+*{
+    box-sizing: border-box
+}
+@import './variants';
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans';
+}
+
+// COMIENZO - ENCABEZADO
+.container {
+    width: 1280px;
+    height: 1062px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $bg-color;
+}
+.container-head {
+    display: flex;
+    width: 999px;
+    border-bottom: solid 1px $divisor-color;
+        &__title{
+            color: $title-color;
+            width: 50%;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 30px;   
+        }
+        &__buttons{
+            display: flex;
+            width: 50%;
+            justify-content: flex-end;
+            align-items: center;
+                &--exportar{
+                    width: 114px;
+                    height: 36px;
+                    border-radius: 3px;
+                    border-style: none;
+                    background: $bg-color-exportar;
+                    border: 1px solid #D4D8E1;
+                    color: $text-color;
+                    font-size: 13px;
+                    line-height: 18px;
+                    font-weight: 600;
+                    margin-right: 13px;
+                    cursor: pointer;
+                }
+                &--registrar{
+                    width: 167px;
+                    height: 36px;
+                    border-radius: 4px;
+                    border-style: none;
+                    background: $bg-color-registrar-venta;
+                    color: $primary-color;
+                    font-size: 13px;
+                    line-height: 17,7px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+        }
+       
+}
+
+// FIN ENCABEZADO
+
+//---------------------------------------------------------//
+
+//COMIENZO BOXES 
+
+@mixin box-title {
+    height: 20px;
+    width: auto;
+    color: $text-color;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600px;
+    margin-left: 8.33%;
+    font-style: normal;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+@mixin box-value {
+    height: 27px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    color: $secondary-text-color;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 27px;
+    margin-left: 8.33%;
+    margin-top: 13px;
+    margin-bottom: 0px;
+}
+
+@mixin box-period {
+    height: 18px;
+    width: auto;
+    color: $caption-text-color;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600px;
+    margin-left: 8.33%;
+    margin-bottom: 20px;
+    margin-top: 3px;
+}
+
+.boxes{
+display: flex;
+width: 999px;
+margin-top: 22px;
+margin-bottom: 23px;
+    &__box1, &__box2, &__box3, &__box4{
+        width: 240px;
+        height: 121px;
+        background-color: $primary-color;
+        border: 1px solid $outline-text-color;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+            h2{
+                @include box-title()
+            }
+            i{
+                width: 10.06px;
+                height: 18.75px;
+            }
+            &--value{
+                @include box-value()
+            }
+            &--period{
+                @include box-period()
+            }
+
+    }
+    &__box2 {
+        margin-right: 13px;
+        margin-left: 13px;
+    }
+    &__box3{
+        margin-right: 13px;
+    }
+
+}
+
+// FIN BOXES
+
+//---------------------------------------------------------//
+
+//COMIENZO GRID
+@mixin inputReset {
+    appearance: none;
+}
+@mixin placeholder {
+    position: absolute;
+    width: 239px;
+    color: $placeholder-text-color;
+    top: 8px;
+    left: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    font-style: normal;
+}
+
+.grid {
+    width: 999px;
+    height: 682px;
+    background-color: $primary-color;
+    border-radius: 8px;
+    border: 1px solid #D4D8E1;
+        &__searched {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 23px;
+                &--text{
+                    width: 274px;
+                    height: 35px;
+                    display: flex;
+                    position: relative;
+                    padding: 0;
+                    &--lupa{
+                        width: 274px;
+                        height: 35px;
+                        border-radius: 4px;
+                        border: 1px solid $outline-text-color;
+                        padding: 0;
+                        @include inputReset()
+                    }
+                    &--lupa::placeholder {
+                        @include placeholder()
+                    }
+                    i{
+                        position: absolute;
+                        display: flex;
+                        justify-content: flex-end;
+                        color: $text-color;
+                        top: 8px;
+                        right: 11px;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 20px;
+                    }      
+                }
+                &--curso, &--estado, &--moneda {
+                    width: 160px;
+                    height: 35px;
+                    border-radius: 4px;
+                    border: 1px solid $outline-text-color;
+                    display: flex;
+                    justify-content: center;
+                        select{
+                            width: 140px;
+                            font-weight: 600px;
+                            font-size: 14px;
+                            line-height: 19px;
+                            font-style: normal;
+                            border: none;
+                            color: $text-color;
+                            font-family: 'Open Sans';
+                        }
+                }
+                &--date{
+                    width: 150px;
+                    height: 34px;
+                    border-radius: 4px;
+                    border: 1px solid $outline-text-color;
+                    display: flex;
+                    justify-content: center;
+                        input{
+                            border: none;
+                            font-size: 13px;
+                            font-weight: 600px;
+                            line-height: 18px;
+                            color: $text-color;
+                            font-family: 'Open Sans';
+                            margin-left: 13px;
+                            margin-right: 8px;
+                            @include inputReset()
+                        }
+                        input::-webkit-calendar-picker-indicator {
+                            display: none;
+                        }
+                            &--icon{
+                                width: 44px;
+                                border-left: solid 1px $outline-text-color;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                                i{
+                                    width: 15px;
+                                    height: 16.67px;
+                                    color: $divisor-color;
+                                    font-size: 100%;
+                                    margin-right: 12.5%;
+                                    margin-left: 12.5%;
+                                }
+                }
+        }
+
+}
+
+
